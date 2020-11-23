@@ -1,0 +1,41 @@
+<button mat-raised-button class="button-finish" (click)="endSearche()">סיום</button>
+
+<div class="popular-title">
+    <p>המרחק בק"מ</p>
+    <p class="distance">{{data.distance}}</p>
+    <p class="all-popular-title">רשימת התוצאות הפופלריות</p>
+</div>
+<div class="upper-line"></div>
+<div class="popular-title">
+    <p>המרחק הפופולרי ביותר</p>
+    <p class="distance">{{resMaxPopular.num_searches}}</p>
+</div>
+<div class="max-popluar">
+    <p class="city-max-popular">{{resMaxPopular.destination_city}}</p>
+    <div class="max-popular-line"></div>
+    <p class="city-origin-max-popluar">{{resMaxPopular.origin_city}}</p>
+</div>
+<div class="location-resulte">
+    <div class="all-resulte">
+        <div class="all-card">
+            <div *ngFor='let popular of resPopular'>
+                <mat-card class="card_popular">
+                    <div class="search-amount-external">
+                        <span class="search-amount">{{popular.num_searches}}</span>
+                        <span class="search-amount-text">בקשות</span>
+                    </div>
+                    <div class="destination-external">
+                        <div class="destination">{{popular.destination_city}}</div>
+                        <div class="destination-text">יעד</div>
+                    </div>
+                    <div class="origin-external">
+                        <div class="origin">{{popular.origin_city}}</div>
+                        <div class="origin-text">מוצא</div>
+                    </div>
+                </mat-card>
+                <br>
+            </div>
+        </div>
+        <div mat-dialog-a ctions></div>
+    </div>
+</div>
